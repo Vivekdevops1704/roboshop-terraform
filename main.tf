@@ -1,4 +1,4 @@
-module components {
+module "components" {
     source          =   "git::https://github.com/Vivekdevops1704/tf-module-basic-test.git"
     for_each        =    var.components
     zone_id         =    var.zone_id
