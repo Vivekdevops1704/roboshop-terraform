@@ -1,10 +1,7 @@
-variable "security_groups" {
-  default = ["sg-00e788a173644cb31"]
-}
+security_groups  = ["sg-00e788a173644cb31"]
 
-variable "zone_id" {
-  default = "Z059517825YYQNLWW93XR"
-}
+zone_id = "Z059517825YYQNLWW93XR"
+
 
 components = {
     frontend = {
