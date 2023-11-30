@@ -1,6 +1,6 @@
 security_groups  = ["sg-00e788a173644cb31"]
 
-zone_id = "Z059517825YYQNLWW93XR"
+zone_id = "Z04558671C6SM6SXB5GV0"
 
 
 components = {
