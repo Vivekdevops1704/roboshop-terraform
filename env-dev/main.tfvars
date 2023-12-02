@@ -20,3 +20,13 @@ vpc = {
 default_vpc_id = "vpc-082a43efed9f13076"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_route_table_id = "rtb-006de08e4f60e945c"
+
+tags = {
+  Company_Name  =    "Bisht group of Industries"
+  Business_Unit =    "Ecommerce"
+  Project_Name  =    "Roboshop"
+  Cost_Center   =    "Ecomm_rs"
+  Createdby     =    "terraform"
+}
+
+env = "dev"
