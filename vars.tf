@@ -4,3 +4,7 @@ variable "default_vpc_cidr" {}
 variable "default_vpc_route_table_id" {}
 variable "tags" {}
 variable "env" {}
+variable "alb" {}
+variable "sg_ingress_cidr" {}
+variable "sg_port" {}
+variable "docdb" {}
