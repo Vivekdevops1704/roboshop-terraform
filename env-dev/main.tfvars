@@ -45,3 +45,45 @@ private = {
      sg_port = 443,80
 }
 }
+
+docdb = {
+  main = {
+    backup_retention_period = 5
+    preferred_backup_window = "07:00-09:00"
+    skip_final_snapshot = true
+    sg_ingress_cidr = ["0.0.0.0/0"]
+    engine_version  = "4.0.0"
+    engine_family   = "docdb"
+    instance_count = 2
+    instance_class = "db.t3.medium"
+  }
+}
+
+rds = {
+  main = {
+    rds_type = "mysql"
+    db_port = "3306"
+    engine_family ="aurora-mysql5.7"
+    engine = "aurora-mysql"
+    engine_version ="5.7.mysql_aurora.2.11.3"
+    preferred_backup_window = "07:00-09:00"
+    backup_retention_period = 5
+    skip_final_snapshot = true
+    instance_count = 1
+    instance_class = "db.t3.small"
+  }
+}
+
+elasticache = {
+  main = {
+    family = "redis"
+    elasticache_type = "redis6.x"
+    port = 6379
+    engine = "redis"
+    node_type = "cache.t3.micro"
+    num_cache_nodes = 1
+    engine_version = "6.2"
+  }
+
+}
+  

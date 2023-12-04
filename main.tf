@@ -26,8 +26,35 @@ module "alb" {
 module "docdb" {
     source            =   "git::https://github.com/Vivekdevops1704/tf-module-docdb.git"
     for_each          =    var.docdb
-    
+    subnet_ids        =    local.db_subnets
+    backup_retention_period = each.value["backup_retention_period"]
+    preferred_backup_window = each.value["preferred_backup_window"]
+    skip_final_snapshot     = each.value["skip_final_snapshot"]
+    sg_ingress_cidr   =    local.app_subnets_cidr
+    vpc_id             =   local.vpc_id
+    engine_version     =   each.value["engine_version"]
+    engine_family      =   each.value["engine_family"]
     tags              =    var.tags
     env               =    var.env
-    
+    instance_count    =    each.value["instance_count"]
+    instance_class    =    each.value["instance_class"]   
+}
+
+module "rds" {
+    source            =   "git::https://github.com/Vivekdevops1704/tf-module-rds.git"
+    for_each          =    var.rds
+    subnet_ids        =    local.db_subnets
+    sg_ingress_cidr   =    local.app_subnets_cidr
+    vpc_id            =    local.vpc_id
+    tags              =    var.tags
+    env               =    var.env
+    db_port           =    each.value["db_port"]
+    rds_type          =    each.value["rds_type"]
+    engine_family     =    each.value["engine_family"]
+    engine            =    each.value["engine"]
+    engine_version    =    each.value["engine_version"]
+    backup_retention_period = each.value["backup_retention_period"]
+    preferred_backup_window  = each.value["preferred_backup_window"]
+    nstance_count    =    each.value["instance_count"]
+    instance_class    =    each.value["instance_class"]   
 }

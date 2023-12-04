@@ -8,3 +8,5 @@ variable "alb" {}
 variable "sg_ingress_cidr" {}
 variable "sg_port" {}
 variable "docdb" {}
+variable "rds" {}
+variable "elasticache"{}
